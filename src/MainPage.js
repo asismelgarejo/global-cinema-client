@@ -16,7 +16,7 @@ const MainPage = function () {
 
   };
   useEffect(() => {
-    fetch("http://localhost:8080/movies")
+    fetch("http://localhost/api/movies")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
