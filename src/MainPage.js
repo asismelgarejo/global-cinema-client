@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import { useNavigate } from "react-router-dom";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const MainPage = function () {
   const [moviesData, setMovies] = useState([]);
   const username = "JohnDoe";
@@ -16,7 +18,7 @@ const MainPage = function () {
 
   };
   useEffect(() => {
-    fetch("http://localhost/api/movies")
+    fetch(`${apiUrl}/movies`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
